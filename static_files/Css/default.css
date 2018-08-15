@@ -1,3 +1,31 @@
-h2{
-	color : #005522;
+header{
+	background-color: #0da785;
+	padding : 10px;
+}
+
+article{
+	margin:auto;
+	margin-top:20px;
+	padding : 5px;
+	width:90%;
+	min-width: 100px;
+}
+
+p{
+	margin:auto;
+}
+
+h3{
+	color:white;
+	margin-right:10px; 
+	margin-bottom:0px;
+}
+
+.lead{
+	font-size:14pt; !important
+}
+
+.subtitle{
+	color:#dddddd;
+	font-size:14pt;
 }

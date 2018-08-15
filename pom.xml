@@ -37,6 +37,21 @@
 			<artifactId>javax.annotation-api</artifactId>
 			<version>${annotation-api.version}</version>
 		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.12</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-dbcp</groupId>
+		    <artifactId>commons-dbcp</artifactId>
+		    <version>1.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
 	</dependencies>
 	<!-- Build =================================================== -->
 	<build>
