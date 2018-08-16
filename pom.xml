@@ -52,6 +52,13 @@
 		    <artifactId>spring-jdbc</artifactId>
 		    <version>${spring.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>edge</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/Libraries/lombok-edge.jar</systemPath>
+		</dependency>
 	</dependencies>
 	<!-- Build =================================================== -->
 	<build>
