@@ -1,5 +1,7 @@
 package john.learning.spring.config;
 
+import javax.sql.DataSource;
+
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -21,8 +23,8 @@ import john.learning.spring.util.ViewNames;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages="john.leanring.config")
-@PropertySources({ @PropertySource("classpath:src/resources/EBookLib.properties")})
+@ComponentScan({"john.learning.spring.config","john.learning.spring.model","john.learning.spring.controllers"})
+@PropertySources({ @PropertySource("classpath:EBookLib.properties")})
 public class WebConfig implements WebMvcConfigurer{
 	private static final String RESOLVER_PREFIX = "/WEB-INF/Views/";
 	private static final String RESOLVER_SUFFIX = ".jsp";
@@ -39,8 +41,8 @@ public class WebConfig implements WebMvcConfigurer{
 	}
 	
 	//define a datasource for mysql connection
-	@Bean(name = "datasource")
-	public BasicDataSource getDataSource() {
+	@Bean
+	public DataSource getDataSource() {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName(env.getProperty("jdbc.driver"));
 		ds.setUsername(env.getProperty("jdbc.username"));

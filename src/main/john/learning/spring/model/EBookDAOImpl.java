@@ -6,12 +6,18 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
+@Repository("ebookDao")
 public class EBookDAOImpl implements EBookDAO {
 
 	private JdbcTemplate template;
 	
-	@Resource(name="datasource")
+	public EBookDAOImpl() {
+		
+	}
+	
+	@Resource
 	@Override
 	public void setDatasource(DataSource datasource) {
 		template = new JdbcTemplate(datasource);

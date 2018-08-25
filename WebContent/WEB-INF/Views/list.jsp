@@ -14,13 +14,26 @@
 	<%@ include file="header.html" %>
 	<div class="container text-center">
 		<article>
-			<p class="lead">Welcome to your Ebook Library. Here you can store and read your ebooks online!</p>
-			<p id="timer"></p>
-			<a href="<c:url value='/list'/>">See all our books</a>
+			<a href="<c:url value='/'/>" >Home Page</a>	
+			<p class="lead">Browse through the books!</p>
+			</br>
+			<table>
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Published</th>
+				</tr>
+				<c:forEach var="book" items="${book_list}">
+					<tr>
+						<td>${book.title}</td>
+						<td>${book.author}</td>
+						<td>${book.publishDate}</td>
+					</tr>
+				</c:forEach>
+			</table>
 		</article>
 	</div>
 </body>
 <script src="<c:url value='/scripts/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/scripts/bootstrap.min.js'/>"></script>
-<script src="<c:url value='/scripts/home_manager.js'/>"></script>
 </html>
