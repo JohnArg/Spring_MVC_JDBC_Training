@@ -14,7 +14,7 @@
 	<%@ include file="header.html" %>
 	<div class="container text-center">
 		<article>
-			<p class="lead">Welcome to the Ebook Library. Here you can find all sorts of books, magazines, and comics to read online</p>
+			<p class="lead">Welcome to your Ebook Library. Here you can store and read your ebooks online!</p>
 			<p id="timer"></p>
 		</article>
 	</div>

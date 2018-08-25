@@ -2,14 +2,14 @@ package john.learning.spring.model;
 
 import java.time.LocalDate;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 public class EBook {
-	private @Getter int _id; //this will be set by the database - primary key
-	private @Getter String title;
-	private @Getter String author;
-	private LocalDate publishDate;
+	private @Getter @Setter int _id; //this will be set by the database - primary key
+	private @Getter @Setter String title;
+	private @Getter @Setter String author;
+	private @Setter LocalDate publishDate;
 
 	public EBook(String title, String author, LocalDate publishDate){
 		_id=0;
@@ -19,6 +19,7 @@ public class EBook {
 	}
 	
 	public String getPublishDate() {
-		return publishDate.getDayOfMonth() + "/" + publishDate.getMonthValue() + "/" + publishDate.getYear();
+		return publishDate.getYear() + "-" + publishDate.getMonthValue() + "-" + publishDate.getDayOfMonth();
 	}
+	
 }
