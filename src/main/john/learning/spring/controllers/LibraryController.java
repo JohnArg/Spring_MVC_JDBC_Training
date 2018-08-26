@@ -24,4 +24,5 @@ public class LibraryController {
 		model.addAttribute("book_list", books);
 		return ViewNames.LIST_PAGE;
 	}
+	
 }
