@@ -16,7 +16,7 @@
 		<article>
 			<p class="lead">Welcome to your Ebook Library. Here you can store and read your ebooks online!</p>
 			<p id="timer"></p>
-			<a href="<c:url value='/list'/>">See all our books</a>
+			<a href="<c:url value='/library/tiles/1'/>">See all our books</a>
 		</article>
 	</div>
 </body>

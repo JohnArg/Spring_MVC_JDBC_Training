@@ -15,7 +15,7 @@
 	<div class="container text-center">
 		<article>
 			<h5>The page you requested does not exist</h5>
-			<a href="< c:url value='/' />"></a>
+			<a href="< c:url value='/' />">Home Page</a>
 		</article>
 	</div>
 </body>

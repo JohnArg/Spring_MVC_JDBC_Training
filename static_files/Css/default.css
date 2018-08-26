@@ -1,31 +1,65 @@
-header{
+header {
 	background-color: #0da785;
-	padding : 10px;
+	padding: 10px;
 }
 
-article{
-	margin:auto;
-	margin-top:20px;
-	padding : 5px;
-	width:90%;
+article {
+	margin: auto;
+	margin-top: 20px;
+	padding: 5px;
 	min-width: 100px;
 }
 
-p{
-	margin:auto;
+p {
+	margin: auto;
+	fonst-size: 12pt;
 }
 
-h3{
-	color:white;
-	margin-right:10px; 
-	margin-bottom:0px;
+.margin_top {
+	margin-top: 30px;
 }
 
-.lead{
-	font-size:14pt; !important
+h3 {
+	color: white;
+	margin-right: 10px;
+	margin-bottom: 0px;
 }
 
-.subtitle{
-	color:#dddddd;
-	font-size:14pt;
+.lead {
+	font-size: 12pt;
+	!
+	important
+}
+
+.subtitle {
+	color: #dddddd;
+	font-size: 14pt;
+}
+
+a, .pagination>li>a {
+	font-size: 11pt;
+	color: #1a8c5e;
+}
+
+.card {
+	width: 220px;
+	height: 240px;
+	background-color: #dddddd;
+	color: black;
+	padding: 10px;
+	margin-top:0;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	display: inline-block;
+	border-radius: 5px;
+	vertical-align: top;
+}
+
+.card-body {
+	margin-top: 20px;
+}
+
+.btn-danger {
+	background-color: #bb4444;
+	margin-top: 30px;
 }
