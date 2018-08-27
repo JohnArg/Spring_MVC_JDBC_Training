@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 public class EBookDAOImpl implements EBookDAO {
 
 	private JdbcTemplate template;
+	private final int PAGE_TILES = 10;
 	
 	public EBookDAOImpl() {
 		
@@ -25,21 +26,21 @@ public class EBookDAOImpl implements EBookDAO {
 
 	@Override
 	public boolean createEBook(EBook book) {
-		String query = "INSERT INTO EBooks (title, author, published) VALUES (?,?,?);";
+		String query = "INSERT INTO Ebooks (title, author, published) VALUES (?,?,?);";
 		Object[] params = {book.getTitle(), book.getAuthor(), book.getPublishDate()};
 		return template.update(query, params, new EBookRowMapper()) == 1; //num of rows affected
 	}
 
 	@Override
 	public boolean deleteEBook(int id) {
-		String query = "DELETE FROM EBooks WHERE _id = ?";
+		String query = "DELETE FROM Ebooks WHERE _id = ?";
 		Object[] params = {id};
 		return template.update(query, params, new EBookRowMapper()) == 1;
 	}
 
 	@Override
 	public EBook getEBook(int id) {
-		String query = "SELECT FROM EBooks WHERE _id = ?";
+		String query = "SELECT FROM Ebooks WHERE _id = ?";
 		Object[] params = {id};
 		List<EBook> books =  template.query(query, params, new EBookRowMapper());
 		if(books.size() > 1) {
@@ -57,6 +58,15 @@ public class EBookDAOImpl implements EBookDAO {
 		Object[] params = {pageStart, pageStop};
 		List<EBook> books = template.query(query, params, new EBookRowMapper());
 		return books;
+	}
+
+	@Override
+	public int getNumOfPages() {
+		int rowsTotal = template.query("SELECT COUNT(*) FROM Ebooks", new IntegerRowMapper()).get(0);
+		double pagesFit = (rowsTotal*1.0) / PAGE_TILES;
+		Double pagesFitDbl =  new Double(Math.ceil(pagesFit));
+		int pagesToShow = pagesFitDbl.intValue();
+		return pagesToShow;
 	}
 
 }

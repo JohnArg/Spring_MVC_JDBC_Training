@@ -15,5 +15,6 @@ public interface EBookDAO {
 	public EBook getEBook(int id);
 	//get Ebooks for page - use of pagination
 	public List<EBook> getEBooksPage(int page);
-	
+	//get number of pages to display - we use pagination
+	public int getNumOfPages();
 }

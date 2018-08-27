@@ -15,7 +15,7 @@
 	<div class="container text-center">
 		<article>
 			<p class="lead">Browse through the available books! Missing something? Go to the homepage and add the book, or delete a book that you don't need anymore.</p>
-			<a href="/">Go To Home Page</a>	
+			<a href="<c:url value='/'/>">Go To Home Page</a>	
 			<p class="margin_top">Your Library</p>
 			<nav aria-label="Page Navigation">
 			  	<ul class="pagination">
