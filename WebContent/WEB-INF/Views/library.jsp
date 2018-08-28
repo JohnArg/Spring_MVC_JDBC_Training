@@ -18,8 +18,8 @@
 			<a href="<c:url value='/'/>">Go To Home Page</a>	
 			<p class="margin_top">Your Library</p>
 			<nav aria-label="Page Navigation">
-			  	<ul class="pagination">
-			  		<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+			  	<ul id="pagination_list" class="pagination">
+			  		<li class="page-item disabled"><a id="page_btn_prev" class="page-link" href="#">Previous</a></li>
 			  		<c:forEach begin="1" end="${pages}" varStatus="loop">
 			  			<!-- Choose if this is the selected page or not -->
 			  			<li 
@@ -31,12 +31,12 @@
 			  						class="page-item"
 			  					</c:otherwise>
 			  				</c:choose>
-			  			><a class="page-link" href="${loop.index}">${loop.index}</a></li>
+			  			><a class="page-link page_btn" href="#">${loop.index}</a></li>
 			  		</c:forEach>
-					<li class="page-item"><a class="page-link" href="#">Next</a></li>
+					<li class="page-item"><a id="page_btn_next" class="page-link" href="#">Next</a></li>
 				</ul>
 			</nav>
-			<div class="container library-self">
+			<div id="library_page" class="container library-self">
 				<c:forEach var="book" items="${book_list}">
 					<div class="card">
 						<div class="card-body">
@@ -48,12 +48,9 @@
 				</c:forEach>
 			</div>
 		</article>
-		<div class="container library-self">
-		
-		</div>
 	</div>
 </body>
 <script src="<c:url value='/scripts/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/scripts/bootstrap.min.js'/>"></script>
-<script src="<c:url value='/scripts/home_manager.js'/>"></script>
+<script src="<c:url value='/scripts/library_manager.js'/>"></script>
 </html>

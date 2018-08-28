@@ -59,6 +59,11 @@
 			<scope>system</scope>
 			<systemPath>${basedir}/Libraries/lombok-edge.jar</systemPath>
 		</dependency>
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20180813</version>
+		</dependency>
 	</dependencies>
 	<!-- Build =================================================== -->
 	<build>
