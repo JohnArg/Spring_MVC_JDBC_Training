@@ -24,10 +24,23 @@ $(document).ready(()=>{
                     <div class="card-body">
                         <h5 class="card-title">${books_array[i].title}</h5>
                         <p class="card-text">Written by ${books_array[i].author} at ${publishDate}</p>
-                        <a href="#" class="btn btn-danger">Delete</a>
+                        <div class="card_btn_container">
+                            <a href="#" class="btn btn-primary">Read</a>
+                            <a href="#" class="btn btn-danger delete_book_btn" id="${books_array[i].id}">Delete</a>
+                        </div>
                     </div>
                 </div>`);
         }
+    }
+
+    //request a page's data, then fill the page
+    let refreshPage = function(page){
+        let url = "library/"+page; //request the specific page
+        $.get(url, (books_array)=>{
+            populatePage(books_array);
+        },"json").fail(()=>{
+            alert("Error in downloading data");
+        });
     }
 
     //when a page button is pressed
@@ -66,12 +79,39 @@ $(document).ready(()=>{
                 }
             }
         }
-        let url = "library/"+$(this).text(); //request the specific page
-        $.get(url, (books_array)=>{
-            populatePage(books_array);
-        },"json").fail(()=>{
-            alert("Error in downloading data");
-        });
+        //request the specific page
+        refreshPage($(this).text());
+    });
+
+
+    //when the add book button is pressed
+    $("#modalOpener").click(function(){
+        $('#addModal').modal('show');
+    });
+
+    //when the submit button is pressed on the modal
+    $("#add_book_btn").click(function(){
+        let title = $("#input_title").val();
+        let author = $("#input_author").val();
+        let publishDate = $("#input_date").val();
+        $.post("add_book", {title, author, publishDate}, (data)=>{
+        
+        }).fail(()=>{
+            alert("Error in adding book");
+        });    
+        $('#addModal').modal('hide');
+        location.reload();
+    });
+
+    //when the delete button is pressed on a book
+    $(document).on("click",".delete_book_btn", function(){
+        $.post("delete_book", {id: $(this).prop("id")}, (data)=>{
+        
+        }).fail(()=>{
+            alert("Error in deleting book");
+        });    
+        $('#addModal').modal('hide');
+        location.reload();
     });
 
     //when the previous button is pressed

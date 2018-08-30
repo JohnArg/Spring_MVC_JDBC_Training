@@ -19,7 +19,7 @@
 				<p class="lead shadow_text">A place where you can store and read ebooks online. Browse through the available ebooks! Missing something? Add a book, or delete a book that you don't need anymore.</p>
 				<p><a class="nav_link" href="<c:url value='/'/>">Go To Home Page</a></p>	
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				<button id="modalOpener" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 						Add Ebook
 				</button>
 			</div>
@@ -53,7 +53,7 @@
 				    		<p class="card-text">Written by ${book.author} at ${book.getPublishDateString()}</p>
 							<div class="card_btn_container">
 								<a href="#" class="btn btn-primary">Read</a>	
-								<a href="#" class="btn btn-danger">Delete</a>
+								<a href="#" class="btn btn-danger delete_book_btn" id="${book.id}">Delete</a>
 							</div>
 				  		</div>
 					</div>
@@ -62,7 +62,7 @@
 		</section>
 	</div>
 	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -83,12 +83,12 @@
 					</div>
 					<div class="form-group">
 						<label for="input_date">Published</label>
-						<input type="text" class="form-control" id="input_date"/>
+						<input type="text" class="form-control" id="input_date" placeholder="Like day/month/year"/>
 					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
-			<button type="button" class="btn btn-primary">Submit</button>
+			<button id="add_book_btn" type="button" class="btn btn-primary">Submit</button>
 			</div>
 		</div>
 		</div>

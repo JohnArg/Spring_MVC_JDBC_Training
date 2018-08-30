@@ -28,14 +28,14 @@ public class EBookDAOImpl implements EBookDAO {
 	public boolean createEBook(EBook book) {
 		String query = "INSERT INTO Ebooks (title, author, published) VALUES (?,?,?);";
 		Object[] params = {book.getTitle(), book.getAuthor(), book.getPublishDate()};
-		return template.update(query, params, new EBookRowMapper()) == 1; //num of rows affected
+		return template.update(query, params) == 1; //num of rows affected
 	}
 
 	@Override
 	public boolean deleteEBook(int id) {
 		String query = "DELETE FROM Ebooks WHERE _id = ?";
 		Object[] params = {id};
-		return template.update(query, params, new EBookRowMapper()) == 1;
+		return template.update(query, params) == 1;
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class EBookDAOImpl implements EBookDAO {
 	public List<EBook> getEBooksPage(int page) {
 		String query = "SELECT * FROM Ebooks LIMIT ?, ? ;";
 		int pageStart = (page-1)*10;
-		int pageStop = pageStart+10;
+		int pageStop = 10;
 		Object[] params = {pageStart, pageStop};
 		List<EBook> books = template.query(query, params, new EBookRowMapper());
 		return books;

@@ -16,7 +16,7 @@ public class EBookRowMapper implements RowMapper<EBook>{
 		String publishDateStr = rs.getString("published"); //get it as a String. If you get it as a Date, it will display a wrong date
 		LocalDate publishDate = LocalDate.parse(publishDateStr, formatter);
 		book = new EBook(rs.getString("title"), rs.getString("author"), publishDate);
-		book.set_id(rs.getInt("_id"));
+		book.setId(rs.getInt("_id"));
 		return book;
 	}
 
