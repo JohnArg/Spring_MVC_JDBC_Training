@@ -19,10 +19,11 @@ $(document).ready(()=>{
     let populatePage = function(books_array){
         $("#library_page").empty();
         for(let i=0; i<books_array.length; i++){
+            let publishDate = moment(books_array[i].publishDate).format("D/M/YYYY"); //use moment.js to manipulate how the date will show
             $("#library_page").append(`<div class="card">
                     <div class="card-body">
                         <h5 class="card-title">${books_array[i].title}</h5>
-                        <p class="card-text">Written by ${books_array[i].author} at ${books_array[i].publishDate}</p>
+                        <p class="card-text">Written by ${books_array[i].author} at ${publishDate}</p>
                         <a href="#" class="btn btn-danger">Delete</a>
                     </div>
                 </div>`);

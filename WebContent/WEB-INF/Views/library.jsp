@@ -41,7 +41,7 @@
 					<div class="card">
 						<div class="card-body">
 				    		<h5 class="card-title">${book.title}</h5>
-				    		<p class="card-text">Written by ${book.author} at ${book.getPublishDate()}</p>
+				    		<p class="card-text">Written by ${book.author} at ${book.getPublishDateString()}</p>
 				   	 		<a href="#" class="btn btn-danger">Delete</a>
 				  		</div>
 					</div>
@@ -52,5 +52,6 @@
 </body>
 <script src="<c:url value='/scripts/jquery-3.3.1.min.js'/>"></script>
 <script src="<c:url value='/scripts/bootstrap.min.js'/>"></script>
+<script src="<c:url value='/scripts/moment.min.js'/>"></script>
 <script src="<c:url value='/scripts/library_manager.js'/>"></script>
 </html>

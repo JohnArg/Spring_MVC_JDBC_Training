@@ -9,7 +9,7 @@ public class EBook {
 	private @Getter @Setter int _id; //this will be set by the database - primary key
 	private @Getter @Setter String title;
 	private @Getter @Setter String author;
-	private @Setter LocalDate publishDate;
+	private @Getter @Setter LocalDate publishDate;
 
 	public EBook(String title, String author, LocalDate publishDate){
 		_id=0;
@@ -18,8 +18,8 @@ public class EBook {
 		this.publishDate = publishDate;
 	}
 	
-	public String getPublishDate() {
-		return publishDate.getYear() + "-" + publishDate.getMonthValue() + "-" + publishDate.getDayOfMonth();
+	public String getPublishDateString() {
+		return publishDate.getDayOfMonth() + "/" + publishDate.getMonthValue() + "/" + publishDate.getYear();
 	}
 	
 }
