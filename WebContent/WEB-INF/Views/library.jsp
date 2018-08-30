@@ -12,10 +12,19 @@
 </head>
 <body>
 	<%@ include file="header.html" %>
-	<div class="container text-center">
-		<article>
-			<p class="lead">Browse through the available books! Missing something? Go to the homepage and add the book, or delete a book that you don't need anymore.</p>
-			<a href="<c:url value='/'/>">Go To Home Page</a>	
+	<div id="main_container" class="container-fluid">
+		<div class="jumbotron text-center">
+			<div class="container">
+				<h2 class="jumbotron-heading shadow_text">Welcome To EBook Library</h2>
+				<p class="lead shadow_text">A place where you can store and read ebooks online. Browse through the available ebooks! Missing something? Add a book, or delete a book that you don't need anymore.</p>
+				<p><a class="nav_link" href="<c:url value='/'/>">Go To Home Page</a></p>	
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+						Add Ebook
+				</button>
+			</div>
+		</div>
+		<section class="container text-center">
 			<p class="margin_top">Your Library</p>
 			<nav aria-label="Page Navigation">
 			  	<ul id="pagination_list" class="pagination">
@@ -47,7 +56,39 @@
 					</div>
 				</c:forEach>
 			</div>
-		</article>
+		</section>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="input_title">Title</label>
+						<input type="text" class="form-control" id="input_title"/>
+					</div>
+					<div class="form-group">
+						<label for="input_author">Author</label>
+						<input type="text" class="form-control" id="input_author"/>
+					</div>
+					<div class="form-group">
+						<label for="input_date">Published</label>
+						<input type="text" class="form-control" id="input_date"/>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+			<button type="button" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+		</div>
 	</div>
 </body>
 <script src="<c:url value='/scripts/jquery-3.3.1.min.js'/>"></script>

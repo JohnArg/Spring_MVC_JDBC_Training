@@ -13,7 +13,7 @@
 			padding : 10px;
 		}
 		
-		article{
+		section{
 			margin:auto;
 			margin-top:20px;
 			padding : 5px;
@@ -22,7 +22,7 @@
 		
 		p{
 			margin:auto;
-			fonst-size:12pt;
+			font-size:12pt;
 		}
 		
 		.margin_top{
@@ -36,7 +36,8 @@
 		}
 		
 		.lead{
-			font-size:12pt; !important
+			font-size:16pt !important;
+			color:white;
 		}
 		
 		.subtitle{
@@ -44,11 +45,16 @@
 			font-size:14pt;
 		}
 		
-		a, .pagination>li>a{
-			font-size:11pt;
+		.pagination>li>a{
+			font-size:12pt;
 			color:#1a8c5e;
 		}
 		
+		.nav_link{
+			font-size:12pt;
+			color:#ddeedd;
+			text-decoration: underline;
+		}
 		
 		.card{
 			width:220px;
@@ -66,32 +72,60 @@
 		.card-body{
 			margin-top:20px;
 		}
-		
+
+		.btn{
+			background-color:#1a8c5e !important;
+		}
+
 		.btn-danger{
-			background-color:#bb4444;
+			background-color:#bb4444 !important;
 			margin-top:30px;
+		}
+
+		#main_container{
+			padding: 0px;
+		}
+
+		.jumbotron{
+			border-radius: 0px !important;
+			color:white;
+			background: url("../../../static_files/Images/books_ed.jpg") no-repeat;
+			background-size: 100% 100%;
+		}
+
+		.shadow_text{
+			text-shadow: 2px 2px black;
 		}
 	</style>
 </head>
 <body>
 	<header class="container-fluid">
-		<div class="d-inline-block"><h3 class="align-middle">Ebook Library</h3></div>
-		<div class="d-inline-block"><h3 class="subtitle">Read books online</h3></div>	
+		<div class="d-inline-block"><h3 class="align-middle"><strong>Ebook Library</strong></h3></div>
+		<div class="d-inline-block"><h3 class="subtitle"><strong>Read books online</strong></h3></div>	
 	</header>
-	<div class="container text-center">
-		<article>
-			<p class="lead">Browse through the available books! Missing something? Go to the homepage and add the book, or delete a book that you don't need anymore.</p>
-			<a href="#">Go To Home Page</a>	
+	<div id="main_container" class="container-fluid text-center">
+		<div class="jumbotron text-center">
+			<div class="container">
+				<h2 class="jumbotron-heading shadow_text">Welcome To EBook Library</h2>
+				<p class="lead shadow_text">A place where you can store and read ebooks online. Browse through the available ebooks! Missing something? Add a book, or delete a book that you don't need anymore.</p>
+				<p><a class="nav_link" href="#">Go To Home Page</a></p>	
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+						Add Ebook
+				</button>
+			</div>
+		</div>
+		<section>
 			<p class="margin_top">Your Library</p>
 			<nav aria-label="Page navigation example">
-		  	<ul class="pagination pagination-sm">
-				<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-		    	<li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item"><a class="page-link" href="#">2</a></li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item"><a class="page-link" href="#">Next</a></li>
-			</ul>
-		</nav>
+				<ul class="pagination pagination-sm">
+					<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#">Next</a></li>
+				</ul>
+			</nav>
 			<div class="container library-self">
 				<div class="card" >
 			 		<img class="card-img-top" src=".../100px180/" alt="Card image cap">
@@ -174,7 +208,39 @@
 			  		</div>
 				</div>
 			</div>
-		</article>
+		</section>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="input_title">Title</label>
+							<input type="text" class="form-control" id="input_title"/>
+						</div>
+						<div class="form-group">
+							<label for="input_author">Author</label>
+							<input type="text" class="form-control" id="input_author"/>
+						</div>
+						<div class="form-group">
+							<label for="input_date">Published</label>
+							<input type="text" class="form-control" id="input_date"/>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+			</div>
+		</div>
 	</div>
 </body>
 <script

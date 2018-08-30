@@ -12,12 +12,15 @@
 </head>
 <body>
 	<%@ include file="header.html" %>
-	<div class="container text-center">
-		<article>
-			<p class="lead">Welcome to your Ebook Library. Here you can store and read your ebooks online!</p>
-			<p id="timer"></p>
-			<a href="<c:url value='library'/>">See all our books</a>
-		</article>
+	<div id="main_container" class="container-fluid text-center">
+		<div class="jumbotron text-center">
+			<div class="container">
+				<h2 class="jumbotron-heading shadow_text">Welcome To EBook Library</h2>
+				<p class="lead shadow_text">A place where you can store and read ebooks online. Here you can store and read your ebooks online!</p>
+				<p id="timer"></p>
+				<a class="nav_link" href="<c:url value='library'/>">See all our books</a>
+			</div>
+		</div>
 	</div>
 </body>
 <script src="<c:url value='/scripts/jquery-3.3.1.min.js'/>"></script>
