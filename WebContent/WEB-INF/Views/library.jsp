@@ -51,7 +51,10 @@
 						<div class="card-body">
 				    		<h5 class="card-title">${book.title}</h5>
 				    		<p class="card-text">Written by ${book.author} at ${book.getPublishDateString()}</p>
-				   	 		<a href="#" class="btn btn-danger">Delete</a>
+							<div class="card_btn_container">
+								<a href="#" class="btn btn-primary">Read</a>	
+								<a href="#" class="btn btn-danger">Delete</a>
+							</div>
 				  		</div>
 					</div>
 				</c:forEach>

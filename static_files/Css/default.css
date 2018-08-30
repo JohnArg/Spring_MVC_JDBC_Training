@@ -66,6 +66,10 @@ nav{
 	vertical-align: top;
 }
 
+.card_btn_container>a{
+	margin-top:30px;
+}
+
 .card-body{
 	margin-top:20px;
 }
@@ -76,7 +80,6 @@ nav{
 
 .btn-danger{
 	background-color:#bb4444 !important;
-	margin-top:30px;
 }
 
 #main_container{
